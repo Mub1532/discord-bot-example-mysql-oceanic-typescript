@@ -1,0 +1,12 @@
+{
+    "token": "",
+    "guild": "",
+    "defaultErrMessage": "An error occured.",
+    "prod": false,
+    "db":{
+        "host": "",
+        "user": "",
+        "password": "",
+        "database": ""
+    }
+}
