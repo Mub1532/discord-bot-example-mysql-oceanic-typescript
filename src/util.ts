@@ -1,6 +1,6 @@
-import { readdirSync, statSync } from "fs";
+import { readdirSync, statSync } from 'fs';
 
-export function getFiles(dir: string, files_?: Array<any>) {
+export default function getFiles(dir: string, files_?: Array<any>) {
     files_ = files_ || [];
     const files = readdirSync(dir);
     // eslint-disable-next-line no-restricted-syntax, guard-for-in

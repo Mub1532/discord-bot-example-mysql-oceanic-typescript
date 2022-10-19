@@ -1,7 +1,7 @@
-import { Connection } from "mysql2/promise";
-import { CommandInteraction, CreateApplicationCommandOptions } from "oceanic.js";
-import config from "../config.json";
-import DiscordClient from "./ExtendedClient";
+import { Connection } from 'mysql2/promise';
+import { CommandInteraction, CreateApplicationCommandOptions } from 'oceanic.js';
+import config from '../config.json';
+import DiscordClient from './ExtendedClient';
 
 interface ExecuteOptions {
     client: DiscordClient;

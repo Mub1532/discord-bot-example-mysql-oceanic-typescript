@@ -1,10 +1,8 @@
-import { CommandInteraction, ComponentInteraction, ModalSubmitInteraction } from "oceanic.js";
-import { allCommands } from "../..";
-import config from "../../config.json";
-import { client, db } from "../../index";
-import mappings, { GenericInteractionHandler } from "../../interactions";
-import DiscordEvent from "../../structures/Event";
-
+import { CommandInteraction, ComponentInteraction, ModalSubmitInteraction } from 'oceanic.js';
+import { allCommands, client, db } from '../..';
+import config from '../../config.json';
+import mappings, { GenericInteractionHandler } from '../../interactions';
+import DiscordEvent from '../../structures/Event';
 
 export default new DiscordEvent('interactionCreate', async interaction => {
     // Command interaction.
@@ -22,23 +20,22 @@ export default new DiscordEvent('interactionCreate', async interaction => {
             });
         } catch (error) {
             console.error(error);
-            if(!interaction.acknowledged) return interaction.createMessage({
-                content: config.defaultErrMessage
-            })
+            if (!interaction.acknowledged)
+                return interaction.createMessage({
+                    content: config.defaultErrMessage
+                });
         }
-    }
+    } else if (interaction instanceof ComponentInteraction || interaction instanceof ModalSubmitInteraction) {
+        // Other
 
-    // Other
-    else if (interaction instanceof ComponentInteraction || interaction instanceof ModalSubmitInteraction) {
         if (!interaction.data) return;
 
         const name = interaction.data.customID;
 
         const handler: GenericInteractionHandler = mappings[name as keyof typeof mappings];
 
-        if (!handler) return; 
+        if (!handler) return;
 
         handler(interaction as unknown as never);
     }
-
 });

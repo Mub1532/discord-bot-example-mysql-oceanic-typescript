@@ -1,5 +1,5 @@
-import { ClientEvents } from "oceanic.js";
+import { ClientEvents } from 'oceanic.js';
 
 export default class DiscordEvent<Key extends keyof ClientEvents> {
-    constructor(public name: Key, public execute: (...args: ClientEvents[Key])=> void) {}
+    constructor(public name: Key, public execute: (...args: ClientEvents[Key]) => void) {}
 }
