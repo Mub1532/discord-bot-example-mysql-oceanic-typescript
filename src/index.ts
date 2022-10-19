@@ -1,7 +1,6 @@
 /* eslint-disable global-require */
 /* eslint-disable import/no-dynamic-require */
 import { Connection, createConnection } from 'mysql2/promise';
-import { Client } from 'oceanic.js';
 import config from './config.json';
 import { CommandType } from './structures/Command';
 import DiscordClient from './structures/ExtendedClient';
@@ -15,7 +14,7 @@ const eventFiles = getFiles(`${__dirname}/events`).filter(file => file.endsWith(
 const commandFiles = getFiles(`${__dirname}/commands`).filter(file => file.endsWith(config.prod ? '.js' : '.ts'));
 
 (async () => {
-    client = new Client({ auth: `Bot ${config.token}` });
+    client = new DiscordClient({ auth: `Bot ${config.token}` });
 
     // Events
     eventFiles.forEach(eventFile => {
