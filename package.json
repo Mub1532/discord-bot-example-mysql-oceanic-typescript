@@ -1,5 +1,5 @@
 {
-  "name": "discord-bot-template-oceanic-mysql",
+  "name": "discord-bot-example-mysql-oceanic-typescript",
   "version": "1.0.0",
   "main": "build/index.js",
   "author": "Mub1532",
@@ -18,5 +18,9 @@
   "devDependencies": {
     "@angablue/eslint-config": "^1.3.4",
     "prettier": "^2.7.1"
-  }
+  },
+  "repository": {
+        "type": "git",
+        "url": "git+https://github.com/Mub1532/discord-bot-example-mysql-oceanic-typescript.git"
+    },
 }
