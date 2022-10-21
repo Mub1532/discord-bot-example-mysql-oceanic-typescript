@@ -9,4 +9,5 @@ Packages used:
 
 ## Note
 
-If you dont use eslint, remove the eslint files, prettier and @angablue/eslint-config from package json
+- If you dont use eslint, remove the eslint files, prettier and @angablue/eslint-config from package json
+- Its better to use ENV instead of json for token , i have used json just as an example
